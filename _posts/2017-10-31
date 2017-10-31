@@ -1,0 +1,13 @@
+---
+layout: post
+title: set browser title and meta tag
+---
+
+today,
+i try to set browser title and meta tag on nshomeshopping.
+it was simple but it was a repetition of simple work.
+unlike mobile programming source, shoppingmall source didn't have summarizing url pattern. 
+so i analyze all page(jsp), for example product detail, catalog display and so on.
+i spend it all day.
+
+browser title and meta tag are upgraded googling or naver searching result. 
