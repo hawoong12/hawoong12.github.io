@@ -4,12 +4,12 @@ title: About
 permalink: /about/
 ---
 
-Some information about you!
+NS homeshopping developer
 
 ### More Information
 
-A place to include any other types of information that you'd like to include about yourself.
+Enter NS co. 2015.11.01~
 
 ### Contact me
 
-[email@domain.com](mailto:email@domain.com)
+[hawoong12@nsmall.com](mailto:hawoong12@nsmall.com)
