@@ -33,3 +33,72 @@ GTM 공식 사이트에서는
 hawoong12.github.io/images/gtm-ga_measuring_purchases.JPG
 
 라고 나타나 있습니다. 이해하기가 쉽지 않죠.
+
+하지만 자세히 살펴보면 필요한 정보는 모두 포함하고 있어요.
+
+저 스크립트를 넣고 싶은 사이트에 넣어주면 되요.
+
+여기서 제일 중요한 점은 이 스크립트는 GTM스니펫(처음 스크립트 삽입하라고 주는 GTM설치스크립트)보다는 먼저 읽어져야 합니다.
+
+따라서 <head>부분에 선언했던 해당 GTM스니펫 스크립트를 구매완료 페이지에서는 <head>에서 호출 되지 않고 
+
+dataLayer 선언 후 <body>에서 선언을 해야합니다.
+
+{% highlight ruby %}
+<head>
+	<!-- Google Tag Manager -->
+	<script>
+	if((document.URL).indexOf('구매완료URL에반드시포함되는referrer') < 0){
+		(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+		new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+		j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+		'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+		})(window,document,'script','dataLayer','asldhfasdfkaj(GTMid들어가는곳)');
+	}
+	</script>
+	<!-- End Google Tag Manager -->
+</head>
+
+<body>
+	<script>
+	var dataLayer = new Array();
+	dataLayer.push({'ecommerce': {
+    'purchase': {
+      'actionField': {
+        'id': 'T12345',                         // Transaction ID. Required for purchases and refunds.
+        'affiliation': 'Online Store',
+        'revenue': '35.43',                     // Total transaction value (incl. tax and shipping)
+        'tax':'4.90',
+        'shipping': '5.99',
+        'coupon': 'SUMMER_SALE'
+      },
+      'products': [{                            // List of productFieldObjects.
+        'name': 'Triblend Android T-Shirt',     // Name or ID is required.
+        'id': '12345',
+        'price': '15.25',
+        'brand': 'Google',
+        'category': 'Apparel',
+        'variant': 'Gray',
+        'quantity': 1,
+        'coupon': ''                            // Optional fields may be omitted or set to empty string.
+       },
+       {
+        'name': 'Donut Friday Scented T-Shirt',
+        'id': '67890',
+        'price': '33.75',
+        'brand': 'Google',
+        'category': 'Apparel',
+        'variant': 'Black',
+        'quantity': 1
+       }]
+    }
+  }});
+  
+		(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+		new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+		j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+		'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+		})(window,document,'script','dataLayer','asldhfasdfkaj(GTMid들어가는곳)');
+  </script>
+</body>
+{% endhighlight %}
