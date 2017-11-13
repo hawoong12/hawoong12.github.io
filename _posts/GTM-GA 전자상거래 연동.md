@@ -30,7 +30,7 @@ comments : true
 구매완료를 추적하기 위해 GTM에서 제시한 데이터 setting을 먼저 해볼까요? 
 
 GTM 공식 사이트에서는 
-https://hawoong12.github.io/images/gtm-ga_measuring_purchases.JPG
+/hawoong12.github.io/images/gtm-ga_measuring_purchases.JPG
 
 라고 나타나 있습니다. 이해하기가 쉽지 않죠.
 
