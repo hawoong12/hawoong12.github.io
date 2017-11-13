@@ -44,11 +44,10 @@ hawoong12.github.io/images/gtm-ga_measuring_purchases.JPG
 
 dataLayer 선언 후 <body>에서 선언을 해야합니다.
 
-{% highlight ruby %}
-<head>
+{% highlight ruby %}<head>
 	<!-- Google Tag Manager -->
 	<script>
-	if((document.URL).indexOf('구매완료URL에반드시포함되는referrer') < 0){
+	if((document.URL).indexOf('구매완료URL에반드시포함되는referrer중 하나') < 0){
 		(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
 		new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
 		j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
@@ -98,7 +97,20 @@ dataLayer 선언 후 <body>에서 선언을 해야합니다.
 		new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
 		j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 		'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-		})(window,document,'script','dataLayer','asldhfasdfkaj(GTMid들어가는곳)');
+		})(window,document,'script','dataLayer','asldhfasdfkaj(GTM-id들어가는곳)');
   </script>
 </body>
+
 {% endhighlight %}
+
+이런 방식으로요.
+
+js에서 dataLayer라고 선언을 하게 되면 해당 dataLayer는 GTM에서 해당 데이터를 읽어서 어떤 트리거와 TAG를 통해 GA로 보낼 것인지 준비를 합니다.
+
+다음은 trigger setting입니다.
+
+hawoong12.github.io/images/trrigersetting.JPG
+
+줄 쳐놓은 저 곳에는 '구매완료URL에반드시포함되는referrer중 하나.' 를 넣으시면 됩니다.
+
+여기까지 하셨다면 이제 js에서 데이터를 setting했으며 어떤 상황에서 그 데이터를 가져갈지 설정이 완료 되었어요.
