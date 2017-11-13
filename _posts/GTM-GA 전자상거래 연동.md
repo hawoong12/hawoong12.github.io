@@ -114,3 +114,12 @@ hawoong12.github.io/images/trrigersetting.JPG
 줄 쳐놓은 저 곳에는 '구매완료URL에반드시포함되는referrer중 하나.' 를 넣으시면 됩니다.
 
 여기까지 하셨다면 이제 js에서 데이터를 setting했으며 어떤 상황에서 그 데이터를 가져갈지 설정이 완료 되었어요.
+
+이제 trigger를 tag에 넣어서 GTM에서 GA로 보낼 수 있는 tag만 생성하면 끝입니다.
+
+hawoong12.github.io/images/tagsetting.JPG
+
+태그 setting까지 완료 되었습니다.
+
+해당 사이트에 적용되었는지 확인하시려면 미리보기 버튼을 누르시고
+
