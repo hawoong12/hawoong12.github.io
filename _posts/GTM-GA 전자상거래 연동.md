@@ -123,3 +123,10 @@ hawoong12.github.io/images/tagsetting.JPG
 
 해당 사이트에 적용되었는지 확인하시려면 미리보기 버튼을 누르시고
 
+hawoong12.github.io/images/ecommerce_dom.JPG
+
+gtm.dom tag가 실행되었는지, 
+
+hawoong12.github.io/images/ecommerce_dataLayer.JPG
+
+해당 tag에 dataLayer가 정확히 setting되었는지 확인하시면 끝입니다.
